@@ -1,0 +1,287 @@
+body {
+    background: url("images/Background_Image.jpg") no-repeat center center fixed;
+    font-family: Watchword;
+    background-size: cover;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@font-face {
+    font-family: "Watchword";
+    src: url("fonts/Leon-Regular_TRIAL.ttf");
+}
+
+@font-face {
+    font-family: "Elegant";
+    src: url("fonts/Rounded_Elegance.ttf");
+}
+
+ul {
+    list-style-type: none;
+    letter-spacing: 1px;
+
+    font-size: 100%;
+    display: table;
+    margin: auto;
+}
+
+li {
+    float: left;
+    background-color:rgba(0,0,0,0.4);
+    margin-bottom: 4%;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 15px 50px;
+    text-decoration: none;
+
+
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+li a:hover {
+    background-color:rgba(0,0,0,0.5);
+}
+
+.header_1 {
+    font-family: Elegant;
+    color: white;
+    font-size: 250%;
+    letter-spacing: 12px;
+    margin-bottom: 7px;
+    margin-top: 0px;
+}
+
+.header_2 {
+    font-family: Elegant;
+    color: white;
+    font-size: 100%;
+    letter-spacing: 7px;
+    margin-left: 25px;
+    margin-top: 0px;
+}
+
+h1 {
+    background-color:rgba(0,0,0,0.4);
+    color: white;
+    padding: 15px;
+    letter-spacing: 10px;
+    font-size: 250%;
+    margin-top: 40vh;
+    margin-bottom: 0%;
+
+}
+
+h2 {
+    margin-top: -40px;
+    margin-right: 50px;
+    float: right;
+    color: white;
+    font-size: 100%;
+    letter-spacing: 1px;
+}
+
+.firstH1 {
+    background-color:rgba(0,0,0,0.4);
+    color: white;
+    padding: 15px;
+    letter-spacing: 10px;
+    font-size: 250%;
+    margin-top: 85vh;
+    margin-bottom: 0%;
+}
+
+a {
+    color: green;
+}
+
+p {
+    background-color:rgba(0,0,0,0.6);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    color: white;
+    padding: 5px 15px;
+    margin-top:0%;
+    letter-spacing: 1px;
+}
+
+.benne_bild {
+    float: right;
+    width: 20%;
+    height: 20%;
+    margin-right: 100px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+}
+
+.band_logo {
+    width: 23%;
+    height: 200px;
+    padding: 4px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+    margin: 2px;
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.band_logo:hover {
+    opacity: 0.5;
+}
+
+.social_media_logo {
+    float: right;
+    margin-top: -40px;
+    padding: 20px;
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.social_media_logo:hover {
+    opacity: 0.5;
+}
+
+.youtube {
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    margin-top:0%;
+}
+
+.soundcloud {
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    margin-top:0%;
+}
+
+input {
+    color: white;
+    width: 100%;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+
+    border: solid 1px #000;
+    border-bottom: none;
+    background-color:rgba(0,0,0,0.6);
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+    background-color:rgba(0,0,0,0.8);
+    color: white;
+}
+
+textarea {
+    color: white;
+    width: 100%;
+    height: 110px;
+    padding: 15px;
+
+    border: solid 1px #000;
+    background-color:rgba(0,0,0,0.6);
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+textarea:hover {
+    background-color:rgba(0,0,0,0.8);
+    color: white;
+}
+
+#submit {
+    color: white;
+    letter-spacing: 10px;
+    font-size: 220%;
+    width: 100%;
+    color: white;
+    margin-top:-6px;
+
+    cursor: pointer;
+
+    border-top: none;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+}
+
+#submit:hover {
+    color: white;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: white;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+    color: white;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: white;
+}
+
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+    color: white;
+}
+
+input::placeholder, textarea::placeholder {
+    color: white;
+}
+
+input:focus::placeholder, textarea::focus:placeholder {
+    color: white;
+}
+
+input::-ms-placeholder, textarea::-ms-placeholder {
+    color: white;
+}
+
+input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
+    color: white;
+}
+
+/* on hover placeholder */
+
+input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
+    color: white;
+}
+
+input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
+    color: white;
+}
+
+input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
+    color: white;
+}
+
+input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {
+    color: white;
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+    color: white;
+}
+
+input:hover:focus::placeholder, textarea:hover:focus::placeholder {
+    color: white;
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+    color: white;
+}
+
+input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
+    color: white;
+}
