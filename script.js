@@ -8,7 +8,7 @@ function showStuff(id) {
 }
 
 function scrollToDiv(el) {
-    var top = $("#" + el).offset().top - 100;
+    var top = $("#" + el).offset().top - 101;
     $("html, body").animate({ scrollTop: top }, 1000);
 }
 
