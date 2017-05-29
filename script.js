@@ -9,7 +9,7 @@ function showStuff(id) {
 
 function scrollToDiv(el) {
     var offset = $('.menu').height();;
-    var top = $("#" + el).offset().top - offset;
+    var top = $("#" + el).offset().top - offset + 0.5;
     $("html, body").animate({ scrollTop: top }, 1000);
 }
 
@@ -17,16 +17,6 @@ function scrollToTop() {
     var top = 0;
     $("html, body").animate({ scrollTop: top }, 1000);
 }
-
-shots = $(".part").fadeTo(0, 0.05);
-
-$('.part').scroll(function(d,h) {
-    shots.each(function(i) {
-        a = $(this).offset().top + $(this).height();
-        b = $('#portfolio').scrollTop() + $('.container').height();
-        if (a < b) $(this).fadeTo(500,1);
-    });
-});
 
 $(window).on("load",function() {
   function fade(pageLoad) {

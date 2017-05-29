@@ -134,7 +134,6 @@ h1 {
 .part {
     white-space: nowrap;
     margin-top: 40vh;
-    opacity: 0;
 }
 
 .hideme {
@@ -169,7 +168,7 @@ h1 {
 .darken_background {
     height: 100vh;
     width: 100vw;
-    background-color:rgba(0,0,0,0.7);
+    background-color:rgba(0,0,0,0.8);
     display: none;
     position: fixed;
     top: 0;
@@ -183,11 +182,13 @@ img {
 
 .service {
     display: inline-block;
-    width: 22vw;
+    width: 17.5vw;
     height: 15vw;
     padding: .5%;
     margin: .5%;
+    background-color:rgba(0,0,0,0.4);
     box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+    vertical-align:top;
 
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -200,6 +201,17 @@ img {
 }
 
 .service_text {
+    color: white;
+    word-break: break-word;
+    width: 100%;
+    white-space: normal;
+    margin-top: 3%;
+    padding: 0;
+    background-color:rgba(0,0,0,0.4);
+}
+
+.service_header {
+    color: white;
     word-break: break-word;
     width: 95%;
     white-space: normal;
@@ -210,11 +222,13 @@ img {
 
 
 .header_description {
+    word-break: break-word;
+    white-space: normal;
     float: right;
     width: 40vw;
     vertical-align: middle;
     color: white;
-    font-size: 100%;
+    font-size: 1vw;
     letter-spacing: 1px;
     background-color:rgba(0,0,0,0);
     box-shadow: 0px 10px 30px rgba(0,0,0,0);
@@ -250,10 +264,11 @@ p {
 }
 
 .band_logo {
-    width: 22%;
-    height: 22%;
+    width: 17.5vw;
+    height: 17.5vw;
     padding: .5%;
     margin: .5%;
+    background-color:rgba(0,0,0,0.4);
     box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
 
     transition: all 0.3s ease-in-out;
