@@ -8,7 +8,8 @@ function showStuff(id) {
 }
 
 function scrollToDiv(el) {
-    var top = $("#" + el).offset().top - 101;
+    var offset = $('.menu').height();;
+    var top = $("#" + el).offset().top - offset;
     $("html, body").animate({ scrollTop: top }, 1000);
 }
 

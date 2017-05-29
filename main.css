@@ -127,6 +127,10 @@ h1 {
     margin-bottom: 0%;
 }
 
+.topBefore {
+    white-space: normal;
+}
+
 .part {
     white-space: nowrap;
     margin-top: 40vh;
@@ -202,6 +206,8 @@ img {
     margin-top: 3%;
     background-color:rgba(0,0,0,0.4);
 }
+
+
 
 .header_description {
     float: right;
