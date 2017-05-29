@@ -2,7 +2,7 @@ body {
     background: url("images/Background_Image.jpg") no-repeat center center fixed;
     font-family: Watchword;
     background-size: cover;
-    width: 60%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -21,7 +21,7 @@ ul {
     list-style-type: none;
     letter-spacing: 1px;
 
-    font-size: 100%;
+    font-size: 1vw;
     display: table;
     margin: auto;
 }
@@ -35,10 +35,8 @@ li {
 li a {
     display: block;
     color: white;
-    padding: 15px 50px;
+    padding: 1vw 2vw;
     text-decoration: none;
-
-
 
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -53,19 +51,18 @@ li a:hover {
 .header_1 {
     font-family: Elegant;
     color: white;
-    font-size: 250%;
-    letter-spacing: 12px;
-    margin-bottom: 7px;
-    margin-top: 0px;
+    font-size: 2.5vw;
+    letter-spacing: 1vw;;
+    margin-left: 7vw;
+    margin-bottom: 0.7vw;
 }
 
 .header_2 {
     font-family: Elegant;
     color: white;
-    font-size: 100%;
-    letter-spacing: 7px;
-    margin-left: 25px;
-    margin-top: 0px;
+    font-size: 1vw;
+    letter-spacing: 0.5vw;
+    margin-left: 9vw;
 }
 
 h1 {
@@ -74,18 +71,65 @@ h1 {
     padding: 15px;
     letter-spacing: 10px;
     font-size: 250%;
-    margin-top: 40vh;
     margin-bottom: 0%;
 
 }
 
-h2 {
-    margin-top: -40px;
-    margin-right: 50px;
+.part {
+    margin-top: 40vh;
+}
+
+.BIO {
+    width: 70vw;
+    float: left;
+    margin-left: 13vw;
+    padding: 2vw;
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.service {
+    display: inline-block;
+    width: 22vw;
+    height: 15vw;
+    padding: .5%;
+    margin: .5%;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.service:hover {
+    opacity: 0.5;
+}
+
+.header_description {
     float: right;
+    width: 40vw;
+    vertical-align: middle;
     color: white;
     font-size: 100%;
     letter-spacing: 1px;
+    background-color:rgba(0,0,0,0);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0);
+}
+
+.discount {
+    float: left;
+    margin-left: 20vw;
+    width: 20vw;
+    color: white;
+    font-size: 100%;
+    letter-spacing: 1px;
+    background-color:rgba(0,0,0,0);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0);
 }
 
 .firstH1 {
@@ -120,11 +164,11 @@ p {
 }
 
 .band_logo {
-    width: 23%;
-    height: 200px;
-    padding: 4px;
+    width: 22%;
+    height: 22%;
+    padding: .5%;
+    margin: .5%;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
-    margin: 2px;
 
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -138,8 +182,9 @@ p {
 
 .social_media_logo {
     float: right;
-    margin-top: -40px;
-    padding: 20px;
+    width: 3vw;
+    height: 3vw;
+    padding: 2vw;
 
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
