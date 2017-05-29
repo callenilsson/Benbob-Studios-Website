@@ -4,43 +4,29 @@
         <title>BenBob Studio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="main.css" rel="stylesheet" type="text/css"/>
+        <link href="mail.css" rel="stylesheet" type="text/css"/>
     </head>
 
-    <script type="text/javascript">
-
-
-        function showStuff(id) {
-            x = document.getElementById(id);
-            if (x.style.display === 'none') {
-                x.style.display = 'block';
-            } else {
-                x.style.display = 'none';
-            }
-        }
-
-        function scrollToDiv(id) {
-            document.getElementById(id).scrollIntoView(true);
-            window.scrollBy(0, -60);
-        }
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
     <body>
         <div class="menu">
-            <div class="menu_13">
+            <a href="#" onclick="return false;" onmousedown="scrollToTop();"><div class="menu_1">
                 <header class="header_1">BENBOB STUDIO</header>
                 <header class="header_2">FREELANCE MUSIC PRODUCER</header>
-            </div>
+            </div></a>
             <div class="menu_2">
                 <ul>
                     <li><a href="#" onclick="showStuff('BIOS'); showStuff('Darken'); return false;">BIO</a></li>
-                    <li><a href="#" onclick="scrollToDiv('Studio'); return false;">STUDIO</a></li>
-                    <li><a href="#" onclick="scrollToDiv('Portfolio'); return false;">PORTFOLIO</a></li>
-                    <li><a href="#" onclick="scrollToDiv('Clients'); return false;">CLIENTS</a></li>
-                    <li><a href="#" onclick="scrollToDiv('Services'); return false;">SERVICES</a></li>
-                    <li><a href="#" onclick="scrollToDiv('Contact'); return false;">CONTACT</a></li>
+                    <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Studio');">STUDIO</a></li>
+                    <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Portfolio');">PORTFOLIO</a></li>
+                    <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Clients');">CLIENTS</a></li>
+                    <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Services');">SERVICES</a></li>
+                    <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Contact');">CONTACT</a></li>
                 </ul>
             </div>
-            <div class="menu_13">
+            <div class="menu_3">
                 <a href="https://www.google.com"><img src="images/youtube2.png" class="social_media_logo"></img></a>
                 <a href="https://www.google.com"><img src="images/twitter2.png" class="social_media_logo"></img></a>
                 <a href="https://www.google.com"><img src="images/facebook2.png" class="social_media_logo"></img></a>
@@ -48,18 +34,20 @@
             </div>
         </div>
 
-        <div class="BIO" id="BIOS">
+        <div class="BIO_header" id="BIOS" onclick="showStuff('BIOS'); showStuff('Darken'); return false;">
             <h1>BIO</h1>
-            <img src="images/benne.jpg" class="benne_bild"></img>
-            <p>This is Benne, he like to mix musik and bonka on trummor. And ibland can he play lite gitarr.
-                <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus velit, accumsan eu imperdiet sit amet, egestas vel nisl. Sed eu ultricies dui, a egestas diam. Cras vel ornare nunc. Vestibulum a libero aliquam turpis ultrices tristique et quis lectus. Pellentesque id odio ac lorem lobortis tempor. Aenean pellentesque massa ac purus vehicula, rutrum tincidunt ex iaculis. Ut scelerisque pellentesque maximus. Sed id porttitor mi. Aliquam ac sem eleifend, hendrerit ligula ut, lobortis quam. Sed consectetur sapien sit amet ipsum rutrum, sit amet mattis metus pretium. Nulla auctor suscipit mauris vel tincidunt. Donec quis quam velit. Ut at odio a eros iaculis feugiat id sed sapien. Nunc sit amet nisi tellus. Curabitur felis lorem, fermentum malesuada enim eget, tincidunt posuere lectus. Sed nec nisl eu purus commodo convallis.
-                <br></br>Pellentesque quis nulla nisl. Phasellus ullamcorper velit odio. Sed eget ligula quis lacus pharetra tincidunt. Nulla tincidunt hendrerit nunc, sit amet dignissim augue aliquam eu. Pellentesque sit amet suscipit eros. Ut ac maximus risus, faucibus sollicitudin orci. Etiam erat mauris, lobortis eu massa quis, egestas euismod felis. Pellentesque ac tempus enim. Aenean congue orci non dictum consequat.
-            </p>
+            <div class="BIO_info">
+                <img src="images/benne.jpg" class="benne_bild"></img>
+                <p>This is Benne, he like to mix musik and bonka on trummor. And ibland can he play lite gitarr.
+                    <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi metus velit, accumsan eu imperdiet sit amet, egestas vel nisl. Sed eu ultricies dui, a egestas diam. Cras vel ornare nunc. Vestibulum a libero aliquam turpis ultrices tristique et quis lectus. Pellentesque id odio ac lorem lobortis tempor. Aenean pellentesque massa ac purus vehicula, rutrum tincidunt ex iaculis. Ut scelerisque pellentesque maximus. Sed id porttitor mi. Aliquam ac sem eleifend, hendrerit ligula ut, lobortis quam. Sed consectetur sapien sit amet ipsum rutrum, sit amet mattis metus pretium. Nulla auctor suscipit mauris vel tincidunt. Donec quis quam velit. Ut at odio a eros iaculis feugiat id sed sapien. Nunc sit amet nisi tellus. Curabitur felis lorem, fermentum malesuada enim eget, tincidunt posuere lectus. Sed nec nisl eu purus commodo convallis.
+                    <br></br>Pellentesque quis nulla nisl. Phasellus ullamcorper velit odio. Sed eget ligula quis lacus pharetra tincidunt. Nulla tincidunt hendrerit nunc, sit amet dignissim augue aliquam eu. Pellentesque sit amet suscipit eros. Ut ac maximus risus, faucibus sollicitudin orci. Etiam erat mauris, lobortis eu massa quis, egestas euismod felis. Pellentesque ac tempus enim. Aenean congue orci non dictum consequat.
+                </p>
+            </div>
         </div>
-        <div class="darken_background" id="Darken"></div>
+        <div class="darken_background" id="Darken" onclick="showStuff('BIOS'); showStuff('Darken'); return false;"></div>
 
 
-        <div  id="Studio">
+        <div id="Studio" class="part_first">
             <p class="header_description">Below is a short video tour of my studio and what it's like to record your music with me.</p>
             <h1 class="firstH1">STUDIO</h1>
             <iframe class="youtube" src="https://www.youtube.com/embed/YWesb1MaEMI" frameborder="0" allowfullscreen></iframe>
@@ -67,7 +55,7 @@
 
         <div class="part" id="Portfolio">
             <p class="header_description">Below are some of the songs I've mixed, mastered, produced, scored or composed over the years. Take a listen!</p>
-            <h1>PORTFOLIO</h1>
+            <h1 class="header_part">PORTFOLIO</h1>
             <iframe class="soundcloud" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/284476&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
             <iframe class="soundcloud" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/284476&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
             <iframe class="soundcloud" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/284476&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
@@ -75,7 +63,7 @@
 
         <div class="part" id="Clients">
             <p class="header_description">Below are some of the clients I've worked with. Click on a band to get to their web or facebook page.</p>
-            <h1>CLIENTS</h1>
+            <h1 class="header_part">CLIENTS</h1>
             <a href="https://www.google.com"><img src="http://cdn2.hubspot.net/hub/245581/file-2314261850-jpg/the.beatles.logo_.490w.jpg?t=1421947291000" class="band_logo"></img></a>
             <a href="https://www.google.com"><img src="http://vignette2.wikia.nocookie.net/starpolar/images/b/b2/Metallica_logo_wallpaper.jpg/revision/latest?cb=20150224011904" class="band_logo"></img></a>
             <a href="https://www.google.com"><img src="http://logonoid.com/images/deep-purple-logo.jpg" class="band_logo"></img></a>
@@ -89,7 +77,7 @@
         <div class="part" id="Services">
             <!--<p class="discount">Package Discount: O%</p>-->
             <p class="header_description">Below are the services I offer. Select for preview of package discounts.</p>
-            <h1>SERVICES</h1>
+            <h1 class="header_part">SERVICES</h1>
             <div class="service">
                 <a href="https://www.google.com"><img src="https://jazzpenney.files.wordpress.com/2014/07/img_4024.jpg"></img></a>
                 <p>Full Production</p>
@@ -118,7 +106,7 @@
 
         <div class="part" id="Contact">
             <p class="header_description">Available for freelance and contract jobs on location or at my studio.</p>
-            <h1>CONTACT</h1>
+            <h1 class="header_part">CONTACT</h1>
 
             <form id="form" class="topBefore">
                 <input id="name" type="text" placeholder="NAME"></input>

@@ -1,0 +1,97 @@
+body {
+    background: url("images/Background_Image.jpg") no-repeat center center fixed;
+    font-family: Watchword;
+    background-size: cover;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@font-face {
+    font-family: "Watchword";
+    src: url("fonts/Leon-Regular_TRIAL.ttf");
+}
+
+@font-face {
+    font-family: "Elegant";
+    src: url("fonts/Rounded_Elegance.ttf");
+}
+
+input {
+    color: white;
+    width: 97%;
+    height: 50px;
+    padding: 0px 15px 0px 15px;
+
+    border: solid 1px #000;
+    border-bottom: none;
+    background-color:rgba(0,0,0,0.6);
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+    background-color:rgba(0,0,0,0.8);
+    color: white;
+}
+
+textarea {
+    color: white;
+    width: 97%;
+    height: 110px;
+    padding: 15px;
+
+    border: solid 1px #000;
+    background-color:rgba(0,0,0,0.6);
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+textarea:hover {
+    background-color:rgba(0,0,0,0.8);
+    color: white;
+}
+
+#submit {
+    color: white;
+    letter-spacing: 10px;
+    font-size: 220%;
+    width: 100%;
+    color: white;
+    margin-top:-6px;
+    margin-bottom: 100px;
+
+    cursor: pointer;
+
+    border-top: none;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+}
+
+#submit:hover {
+    color: white;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: white;}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {color: white;}
+input::-moz-placeholder, textarea::-moz-placeholder {color: white;}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {color: white;}
+input::placeholder, textarea::placeholder {color: white;}
+input:focus::placeholder, textarea::focus:placeholder {color: white;}
+input::-ms-placeholder, textarea::-ms-placeholder {color: white;}
+input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {color: white;}
+
+/* on hover placeholder */
+input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {color: white;}
+input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {color: white;}
+input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {color: white;}
+input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {color: white;}
+input:hover::placeholder, textarea:hover::placeholder {color: white;}
+input:hover:focus::placeholder, textarea:hover:focus::placeholder {color: white;}
+input:hover::placeholder, textarea:hover::placeholder {color: white;}
+input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {color: white;}
