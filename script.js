@@ -1,3 +1,32 @@
+function clickService(service, subject_id){
+    document.getElementById(subject_id).value = "SUBJECT: JOB - " + service;
+}
+
+function messageSent(name_id, email_id, subject_id, message_id, submit_id){
+    var name = document.getElementById(name_id), email = document.getElementById(email_id), subject = document.getElementById(subject_id), message = document.getElementById(message_id), submit = document.getElementById(submit_id);
+    if (document.getElementById(submit_id).value === "MESSAGE SENT!") {
+        document.getElementById(submit_id).value = "SEND";
+    } else if (name.value === ""){
+        name.placeholder = "Please provide your name";
+    } else if (email.value === ""){
+        email.placeholder = "Please provide your e-mail address";
+    } else if (subject.value === ""){
+        subject.placeholder = "Please provide a subject";
+    } else if (message.value === ""){
+        message.placeholder = "Please provide a message";
+    } else {
+        name.value = "";
+        email.value = "";
+        subject.value = "";
+        message.value = "";
+        name.placeholder = "NAME";
+        email.placeholder = "E-MAIL";
+        subject.placeholder = "SUBJECT";
+        message.placeholder = "MESSAGE";
+        submit.value = "MESSAGE SENT!";
+    }
+}
+
 function showStuff(id) {
     x = document.getElementById(id);
     if (!x.style.display || x.style.display === 'none') {

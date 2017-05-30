@@ -79,29 +79,29 @@
             <p class="header_description">Below are the services I offer. Select for preview of package discounts.</p>
             <h1 class="header_part">SERVICES</h1>
             <div class="service">
-                <a target="_blank" href="https://www.google.com"><img src="https://jazzpenney.files.wordpress.com/2014/07/img_4024.jpg"></img></a>
+                <a target="_blank" href="#" onclick="return false;" onmousedown="scrollToDiv('Contact'); clickService('FULL PRODUCTION', 'subject');"><img src="https://jazzpenney.files.wordpress.com/2014/07/img_4024.jpg"></img></a>
                 <h2 class="service_header">Full Production</h2>
                 <p class="service_text">Perfect for the solo artist who want to start a band but can't find the right people. We work together to find YOUR unique sound and what best suits your style. We'll add all the instruments you feel missing in your song(s). This package includes all my available services: playing, recording, mixing and mastering. </p>
             </div>
             <div class="service">
-                <a target="_blank" href="https://www.google.com"><img src="http://firebrandrecording.com/wp-content/uploads/2011/11/Firebrand_Recording_record_button.jpg"></img></a>
+                <a target="_blank" href="#" onclick="return false;" onmousedown="scrollToDiv('Contact'); clickService('RECORDING', 'subject');"><img src="http://firebrandrecording.com/wp-content/uploads/2011/11/Firebrand_Recording_record_button.jpg"></img></a>
                 <h2 class="service_header">Recording</h2>
                 <p class="service_text">Got a song you'd like to record? I got everything you need!</p>
 
             </div>
             <div class="service">
-                <a target="_blank"href="https://www.google.com"><img src="http://videoandfilmmaker.com/wp/wp-content/uploads/2014/05/faders-1050x700.jpg"></img></a>
+                <a target="_blank" href="#" onclick="return false;" onmousedown="scrollToDiv('Contact'); clickService('MIXING', 'subject');"><img src="http://videoandfilmmaker.com/wp/wp-content/uploads/2014/05/faders-1050x700.jpg"></img></a>
                 <h2 class="service_header">Mixing</h2>
                 <p class="service_text">I provide any form of mixing you might need to your recording, as well as adding extra missing instruments and make it sound professional!</p>
 
             </div>
             <div class="service">
-                <a target="_blank"href="https://www.google.com"><img src="https://darkartmastering.com/images/bg-home.jpg?v=1"></img></a>
+                <a target="_blank" href="#" onclick="return false;" onmousedown="scrollToDiv('Contact'); clickService('MASTERING', 'subject');"><img src="https://darkartmastering.com/images/bg-home.jpg?v=1"></img></a>
                 <h2 class="service_header">Mastering</h2>
                 <p class="service_text">Is your mix lacking that extra umph? Hand it over to me and we'll master in that professional sound you're looking for!</p>
             </div>
             <div class="service">
-                <a target="_blank"href="https://www.google.com"><img src="http://blog.proaudiostar.com/wp-content/uploads/2010/07/Drums-Rear-2.jpg"></img></a>
+                <a target="_blank" href="#" onclick="return false;" onmousedown="scrollToDiv('Contact'); clickService('MUSICIAN FREELANCING', 'subject');"><img src="http://blog.proaudiostar.com/wp-content/uploads/2010/07/Drums-Rear-2.jpg"></img></a>
                 <h2 class="service_header">Musician Freelancing (Drums/Guitar)</h2>
                 <p class="service_text">I provide on location job for playing live, drums or guitar.</p>
             </div>
@@ -114,8 +114,9 @@
             <form id="form" class="topBefore">
                 <input id="name" type="text" placeholder="NAME"></input>
                 <input id="email" type="text" placeholder="E-MAIL"></input>
+                <input id="subject" type="text" placeholder="SUBJECT"></input>
                 <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
-                <input id="submit" type="submit" value="SEND"></input>
+                <input id="submit" type="submit" value="SEND" onclick="return false;" onmousedown="messageSent('name', 'email', 'subject', 'message', 'submit');"></input>
             </form>
         </div>
     </body>
