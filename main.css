@@ -131,6 +131,10 @@ h1 {
     white-space: normal;
 }
 
+#Contact {
+    height: calc(100vh);
+}
+
 .part {
     white-space: nowrap;
     margin-top: 40vh;

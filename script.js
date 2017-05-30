@@ -50,7 +50,7 @@ function scrollToTop() {
 $(window).on("load",function() {
   function fade(pageLoad) {
     var windowTop=$(window).scrollTop(), windowBottom=windowTop+$(window).innerHeight();
-    var min=0, max=1, threshold=0.01;
+    var min=0, max=1.8, threshold=0.01;
 
     $(".part, .part_first").each(function() {
       /* Check the location of each desired element */
