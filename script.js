@@ -37,7 +37,7 @@ function showStuff(id) {
 }
 
 function scrollToDiv(el) {
-    var offset = $('.menu').height();;
+    var offset = $('.menu').height();
     var top = $("#" + el).offset().top - offset + 0.5;
     $("html, body").animate({ scrollTop: top }, 1000);
 }
@@ -47,7 +47,17 @@ function scrollToTop() {
     $("html, body").animate({ scrollTop: top }, 1000);
 }
 
+$(document).ready(function() {
+    $(".card").flip({
+        axis: 'y',
+        trigger: 'hover',
+        reverse: true,
+    });
+})
+
 $(window).on("load",function() {
+
+
   function fade(pageLoad) {
     var windowTop=$(window).scrollTop(), windowBottom=windowTop+$(window).innerHeight();
     var min=0, max=1.8, threshold=0.01;

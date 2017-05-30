@@ -71,6 +71,7 @@ li a:hover {
     z-index: 5555;
 }
 
+
 .menu_1 {
     color: white;
     display: block;
@@ -267,22 +268,21 @@ p {
     letter-spacing: 1px;
 }
 
-.band_logo {
+.card {
+    display: inline-block;
     width: 17.5vw;
     height: 17.5vw;
-    padding: .5%;
-    margin: .5%;
-    background-color:rgba(0,0,0,0.4);
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
-
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
+    /*background-color:rgba(0,0,0,0.4);*/
+    /*box-shadow: 0px 10px 30px rgba(0,0,0,0.7);*/
 }
 
-.band_logo:hover {
-    opacity: 0.5;
+.card > * {
+    margin: 10px;
+}
+
+.band_logo {
+    height: 95%;
+    width: 95%;
 }
 
 .youtube {
