@@ -12,6 +12,14 @@
 
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.1.2/dist/jquery.flip.min.js"></script>
 
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+<script>
+  SC.initialize({
+    client_id: 'YOUR_CLIENT_ID',
+    redirect_uri: 'http://example.com/callback'
+  });
+</script>
+
     <body>
         <div class="card-grid" style="perspective: 200px; position: relative; transform-style: preserve-3d;">
           <div class="front" style="backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; height: 100%; width: 100%; transition: all 0.5s ease-out; transform: rotateY(0deg);">Front</div>
@@ -26,7 +34,7 @@
             <div class="menu_2">
                 <ul>
                     <li><a href="#" onclick="showStuff('BIOS'); showStuff('Darken'); return false;">BIO</a></li>
-                    <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Studio');">STUDIO</a></li>
+                    <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Studio'); playSoundcloud('sc-widget');">STUDIO</a></li>
                     <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Portfolio');">PORTFOLIO</a></li>
                     <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Clients');">CLIENTS</a></li>
                     <li><a href="#" onclick="return false;" onmousedown="scrollToDiv('Services');">SERVICES</a></li>
@@ -40,6 +48,9 @@
                 <a target="_blank"href="https://www.google.com"><img src="images/soundcloud2.png" class="social_media_logo"></img></a>
             </div>
         </div>
+
+        <iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=http://api.soundcloud.com/users/1539950/favorites" width="100%" height="465" scrolling="no" frameborder="no" style="display:none;"></iframe>
+
 
         <div class="BIO_header" id="BIOS" onclick="showStuff('BIOS'); showStuff('Darken'); return false;">
             <h1>BIO</h1>
@@ -73,67 +84,69 @@
             <h1 class="header_part">CLIENTS</h1>
             <div class="card">
                 <div class="front">
-                    <a target="_blank" href="https://open.spotify.com/artist/0Q8gpk6bmFGRpPY2W0ibGh"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t34.0-12/18788108_1927711650588399_1336309497_n.jpg?oh=c1a41f0691a787d5497f7c71e5fd8502&oe=592EE11A" class="band_logo"></img></a>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t34.0-12/18788108_1927711650588399_1336309497_n.jpg?oh=c1a41f0691a787d5497f7c71e5fd8502&oe=592EE11A" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank" href="https://open.spotify.com/artist/0Q8gpk6bmFGRpPY2W0ibGh"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t34.0-12/18788108_1927711650588399_1336309497_n.jpg?oh=c1a41f0691a787d5497f7c71e5fd8502&oe=592EE11A" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
+                    <img src="https://images.vexels.com/media/users/3/131784/isolated/preview/a9ff82db0cf438516e13b8c3bf918a00-play-flat-icon-by-vexels.png" id="play" onclick="playSoundcloud('sc-widget', 'play');"></img>
+                    <img src="https://images.vexels.com/media/users/3/131706/isolated/preview/80c52538116b504f0d45858a707d0c4f-pause-flat-button-by-vexels.png" id="pause" onclick="playSoundcloud('sc-widget', 'pause');"></img>
                 </div>
             </div>
             <div class="card">
                 <div class="front">
-                    <a target="_blank" href="https://open.spotify.com/artist/1CoTbxRZP2qDa97erRDWYw"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/13178925_1018890341533236_1830312077149895867_n.jpg?oh=681f404c93ede2f3f91a8eb9d578f2b2&oe=59E2F080" class="band_logo"></img></a>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/13178925_1018890341533236_1830312077149895867_n.jpg?oh=681f404c93ede2f3f91a8eb9d578f2b2&oe=59E2F080" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank" href="https://open.spotify.com/artist/1CoTbxRZP2qDa97erRDWYw"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/13178925_1018890341533236_1830312077149895867_n.jpg?oh=681f404c93ede2f3f91a8eb9d578f2b2&oe=59E2F080" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
                 </div>
             </div>
             <div class="card">
                 <div class="front">
-                    <a target="_blank" href="https://www.facebook.com/anapostrock/"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/11665379_396992553842089_636929960111042147_n.jpg?oh=67b0d435edf8f4360724592854942d2d&oe=59E44E52" class="band_logo"></img></a>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/11665379_396992553842089_636929960111042147_n.jpg?oh=67b0d435edf8f4360724592854942d2d&oe=59E44E52" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank" href="https://www.facebook.com/anapostrock/"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/11665379_396992553842089_636929960111042147_n.jpg?oh=67b0d435edf8f4360724592854942d2d&oe=59E44E52" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
                 </div>
             </div>
             <div class="card">
                 <div class="front">
-                    <a target="_blank" href="https://www.facebook.com/StoraDalen/?fref=ts"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/1150887_465549376874623_1294811930_n.jpg?oh=7a41faa146ff1f3a62d89da6c2bf13e7&oe=59A01A71" class="band_logo"></img></a>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/1150887_465549376874623_1294811930_n.jpg?oh=7a41faa146ff1f3a62d89da6c2bf13e7&oe=59A01A71" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank" href="https://www.facebook.com/StoraDalen/?fref=ts"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/1150887_465549376874623_1294811930_n.jpg?oh=7a41faa146ff1f3a62d89da6c2bf13e7&oe=59A01A71" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
                 </div>
             </div>
             <div class="card">
                 <div class="front">
-                    <a target="_blank" href="https://open.spotify.com/artist/07PWOIjuQ77Qy3mC9XQS0K"><img src="https://d3rt1990lpmkn.cloudfront.net/640/903c1db87377d2f40f194a53a7122fd002849451" class="band_logo"></img></a>
+                    <img src="https://d3rt1990lpmkn.cloudfront.net/640/903c1db87377d2f40f194a53a7122fd002849451" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank" href="https://open.spotify.com/artist/07PWOIjuQ77Qy3mC9XQS0K"><img src="https://d3rt1990lpmkn.cloudfront.net/640/903c1db87377d2f40f194a53a7122fd002849451" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
                 </div>
             </div>
             <br></br>
             <div class="card">
                 <div class="front">
-                    <a target="_blank" href="https://www.facebook.com/Kjell-Ryglert-846816465357538/?fref=ts"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/q82/s960x960/11050707_846819412023910_1729526174514060470_o.jpg?oh=349d4f506d2e9617cb51fc83933e2aa1&oe=599C1625" class="band_logo"></img></a>
+                    <img src="https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/q82/s960x960/11050707_846819412023910_1729526174514060470_o.jpg?oh=349d4f506d2e9617cb51fc83933e2aa1&oe=599C1625" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank" href="https://www.facebook.com/Kjell-Ryglert-846816465357538/?fref=ts"><img src="https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/q82/s960x960/11050707_846819412023910_1729526174514060470_o.jpg?oh=349d4f506d2e9617cb51fc83933e2aa1&oe=599C1625" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
                 </div>
             </div>
             <div class="card">
                 <div class="front">
-                    <a target="_blank"href="https://www.google.com"><img src="https://s-media-cache-ak0.pinimg.com/originals/e0/7a/7d/e07a7d5b2a61b1ac8f44dd3916d72427.jpg" class="band_logo"></img></a>
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/e0/7a/7d/e07a7d5b2a61b1ac8f44dd3916d72427.jpg" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank"href="https://www.google.com"><img src="https://s-media-cache-ak0.pinimg.com/originals/e0/7a/7d/e07a7d5b2a61b1ac8f44dd3916d72427.jpg" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
                 </div>
             </div>
             <div class="card">
                 <div class="front">
-                    <a target="_blank" href="https://www.google.com"><img src="https://s-media-cache-ak0.pinimg.com/originals/2d/77/8a/2d778af13d300543ee465b7a99fcd03f.jpg" class="band_logo"></img></a>
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/2d/77/8a/2d778af13d300543ee465b7a99fcd03f.jpg" class="band_logo"></img>
                 </div>
                 <div class="back">
-                    <a target="_blank" href="https://www.google.com"><img src="https://s-media-cache-ak0.pinimg.com/originals/2d/77/8a/2d778af13d300543ee465b7a99fcd03f.jpg" class="band_logo"></img></a>
+                    <img src="http://wobc.org/wp-content/uploads/2013/09/black-vinyl.jpg" class="band_logo"></img>
                 </div>
             </div>
         </div>

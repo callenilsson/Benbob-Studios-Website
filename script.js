@@ -2,6 +2,23 @@ function clickService(service, subject_id){
     document.getElementById(subject_id).value = "SUBJECT: JOB - " + service;
 }
 
+function playSoundcloud(id, action) {
+    var iframeElement   = document.querySelector('iframe');
+    var iframeElementID = iframeElement.id;
+    var widget         = SC.Widget(iframeElement);
+
+    if (action === 'play') {
+        document.getElementById('play').style.display = 'none';
+        document.getElementById('pause').style.display = 'block';
+        widget.play();
+    } else {
+        document.getElementById('play').style.display = 'block';
+        document.getElementById('pause').style.display = 'none';
+        widget.pause();
+    }
+
+}
+
 function messageSent(name_id, email_id, subject_id, message_id, submit_id){
     var name = document.getElementById(name_id), email = document.getElementById(email_id), subject = document.getElementById(subject_id), message = document.getElementById(message_id), submit = document.getElementById(submit_id);
     if (document.getElementById(submit_id).value === "MESSAGE SENT!") {

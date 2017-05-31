@@ -272,17 +272,48 @@ p {
     display: inline-block;
     width: 17.5vw;
     height: 17.5vw;
+    margin: 0.5%;
     /*background-color:rgba(0,0,0,0.4);*/
     /*box-shadow: 0px 10px 30px rgba(0,0,0,0.7);*/
 }
 
-.card > * {
-    margin: 10px;
+.band_logo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
-.band_logo {
-    height: 95%;
-    width: 95%;
+#play {
+    filter: brightness(3);
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#play:hover {
+    filter: brightness(2);
+}
+
+#pause {
+    filter: brightness(2);
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+#pause:hover {
+    filter: brightness(2);
 }
 
 .youtube {
