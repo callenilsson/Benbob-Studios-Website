@@ -76,7 +76,7 @@ function playMusic(audio) {
     audio.play();
 }
 
-function pauseMusic(audio, circle, timeline_highlight, imeCounter) {
+function pauseMusic(audio, circle, timeline_highlight, timeCounter) {
     $(audio).stop();
     $(audio).animate({volume: 0}, {
         easing:'linear',
@@ -261,6 +261,14 @@ $(document).ready(function() {
         var timeCounter = $(this).siblings('.timeCounter')[0];
 
         if (audio.readyState >= 2) {
+            var minutes = Math.floor(audio.duration/60 % 60);
+            var seconds = Math.floor(audio.duration % 60);
+            if (seconds < 10) {
+                $(timeRight).text(minutes + ":0" + seconds);
+            } else {
+                $(timeRight).text(minutes + ":" + seconds);
+            }
+
             if (this.src === playButton) {
                 this.src = pauseButton;
                 playMusic(audio);
@@ -298,6 +306,21 @@ $(document).ready(function() {
         var playButton = "https://images.vexels.com/media/users/3/131784/isolated/preview/a9ff82db0cf438516e13b8c3bf918a00-play-flat-icon-by-vexels.png";
         play.src = playButton;
         pauseMusic(audio, circle, timeCounter);
+    });
+
+    $('.card').mouseenter(function() {
+
+        var timeRight = $(this).find('.timeRight');
+        var audio = $(this).find('.audio')[0];
+        if (audio.readyState >= 2) {
+            var minutes = Math.floor(audio.duration/60 % 60);
+            var seconds = Math.floor(audio.duration % 60);
+            if (seconds < 10) {
+                $(timeRight).text(minutes + ":0" + seconds);
+            } else {
+                $(timeRight).text(minutes + ":" + seconds);
+            }
+        }
     });
 })
 
