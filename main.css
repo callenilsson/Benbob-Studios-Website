@@ -183,6 +183,7 @@ h1 {
 img {
     max-width: 100%;
     max-height: 100%;
+    image-rendering: auto;
     -khtml-user-select: none;
     -o-user-select: none;
     -moz-user-select: none;
@@ -295,13 +296,14 @@ a {
     text-align: center;
     margin-top: 8%;
     font-size: 2vw;
-    color: white;
+    color: #CCC;
     left: 50%;
     transform: translate(-50%);
 }
 
 .band_name:hover {
     text-decoration: underline;
+    color: #FFF;
 }
 
 .play {
@@ -345,6 +347,17 @@ a {
     background-color: #999;
 }
 
+.timeline_feature {
+    left: 0%;
+    width: 0%;
+    height: 15%;
+    position: absolute;
+    top:50%;
+    transform: translate(0%, -50%);
+    background-color: #ff8335;
+    opacity: 0.5
+}
+
 .volume_timeline_highlight {
     left: 0;
     width: 100%;
@@ -359,6 +372,7 @@ a {
     border-radius: 50%;
 	height: 100%;
     transform: translate(-50%);
+    display: none;
 }
 
 .volume {
@@ -375,6 +389,7 @@ a {
 	height: 100%;
     transform: translate(-50%);
     margin-left: 100%;
+    display: none;
 }
 
 .volume_icon {

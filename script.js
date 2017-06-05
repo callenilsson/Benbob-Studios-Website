@@ -67,9 +67,9 @@ function startTimeline(audio, circle, timeline_highlight) {
     });
 }
 
-function playMusic(audio) {
+function playMusic(audio, volume) {
     $(audio).stop();
-    $(audio).animate({volume: 1}, {
+    $(audio).animate({volume: volume}, {
         easing:'linear',
         duration: 500,
     });
@@ -185,7 +185,7 @@ $(document).ready(function() {
         var circle = $(this).find('.circle')[0];
         var timeline_highlight = $(this).find('.timeline_highlight')[0];
         $(circle).css('display', 'block');
-        $(timeline_highlight).css('background-color', '#00FF00');
+        $(timeline_highlight).css('background-color', '#49dd49');
     });
 
     $(".timeline").mouseleave(function () {
@@ -199,7 +199,7 @@ $(document).ready(function() {
         var circle = $(this).find('.volume_circle')[0];
         var timeline_highlight = $(this).find('.volume_timeline_highlight')[0];
         $(circle).css('display', 'block');
-        $(timeline_highlight).css('background-color', '#00FF00');
+        $(timeline_highlight).css('background-color', '#49dd49');
     });
 
     $(".volume").mouseleave(function () {
@@ -215,6 +215,7 @@ $(document).ready(function() {
         var timeline_highlight = $(this).find('.volume_timeline_highlight')[0];
         var audio = $(this).siblings('.audio')[0];
         var circle = $(this).find('.volume_circle')[0];
+        var volume_icon = $(this).find('.volume_icon');
         var width = $(this).width();
         var start = $(this).offset().left;
         var end = start + width;
@@ -223,6 +224,15 @@ $(document).ready(function() {
         audio.volume = clickPercentage;
         $(circle).css({marginLeft: (100*clickPercentage).toString() + "%"});
         $(timeline_highlight).css({width: (100*clickPercentage).toString() + "%"});
+        if (clickPercentage > 0.66) {
+            $(volume_icon).attr('src', "images/volume_max.png");
+        } else if (clickPercentage > 0.33 && clickPercentage <= 0.66) {
+            $(volume_icon).attr('src', "images/volume_mid.png");
+        } else if (clickPercentage > 0 && clickPercentage <= 0.33) {
+            $(volume_icon).attr('src', "images/volume_low.png");
+        } else {
+            $(volume_icon).attr('src', "images/volume_x.png");
+        }
 
         $(document).mousemove(function(e){
             e.preventDefault();
@@ -234,12 +244,21 @@ $(document).ready(function() {
             audio.volume = clickPercentage;
             $(circle).css({marginLeft: (100*clickPercentage).toString() + "%"});
             $(timeline_highlight).css({width: (100*clickPercentage).toString() + "%"});
+            if (clickPercentage > 0.66) {
+                $(volume_icon).attr('src', "images/volume_max.png");
+            } else if (clickPercentage > 0.33 && clickPercentage <= 0.66) {
+                $(volume_icon).attr('src', "images/volume_mid.png");
+            } else if (clickPercentage > 0 && clickPercentage <= 0.33) {
+                $(volume_icon).attr('src', "images/volume_low.png");
+            } else {
+                $(volume_icon).attr('src', "images/volume_x.png");
+            }
         });
 
         $(document).mouseup(function(){
             $(this).unbind('mousemove');
             $('.volume').on("mouseleave", function () {
-                var circle = $(this).find('.circle')[0];
+                var circle = $(this).find('.volume_circle')[0];
                 var timeline_highlight = $(this).find('.volume_timeline_highlight')[0];
                 $(circle).css('display', 'none');
                 $(timeline_highlight).css('background-color', '#999');
@@ -259,6 +278,7 @@ $(document).ready(function() {
         var timeLeft = $(this).siblings('.timeLeft')[0];
         var timeRight = $(this).siblings('.timeRight')[0];
         var timeCounter = $(this).siblings('.timeCounter')[0];
+        var volume = parseInt($($(this).siblings('.volume')).find('.volume_timeline_highlight').css('width'))/100;
 
         if (audio.readyState >= 2) {
             var minutes = Math.floor(audio.duration/60 % 60);
@@ -271,12 +291,12 @@ $(document).ready(function() {
 
             if (this.src === playButton) {
                 this.src = pauseButton;
-                playMusic(audio);
+                playMusic(audio, volume);
                 startTimeline(audio, circle, timeline_highlight);
                 playTime(audio, timeLeft, timeCounter);
             } else {
                 this.src = playButton;
-                pauseMusic(audio, circle, timeCounter);
+                pauseMusic(audio, circle, timeline_highlight, timeCounter);
             }
             audio.onended = function() {
                 play.src = playButton;
@@ -303,47 +323,77 @@ $(document).ready(function() {
         var audio = $(play).siblings('.audio')[0];
         var circle = $($(play).siblings('.timeline')[0]).find('.circle')[0];
         var timeCounter = $(play).siblings('.timeCounter')[0];
+        var timeline_highlight = $($(play).siblings('.timeline')[0]).find('.timeline_highlight')[0];
         var playButton = "https://images.vexels.com/media/users/3/131784/isolated/preview/a9ff82db0cf438516e13b8c3bf918a00-play-flat-icon-by-vexels.png";
         play.src = playButton;
-        pauseMusic(audio, circle, timeCounter);
+        pauseMusic(audio, circle, timeline_highlight, timeCounter);
     });
 
     $('.card').mouseenter(function() {
+        if (this.id === '0') {
+            this.id = '1';
+            var timeline_highlight = $(this).find('.timeline_highlight')[0];
+            var timeline_feature = $(this).find('.timeline_feature')[0];
+            var circle = $(this).find('.circle')[0];
+            var timeLeft = $(this).find('.timeLeft')[0];
+            var timeRight = $(this).find('.timeRight')[0];
+            var audio = $(this).find('.audio')[0];
+            var timeCounter = $(this).find('.timeCounter')[0];
+            var startTime = circle.id.split(":");
+            var startMinute = parseInt(startTime[0]);
+            var finishSecond = parseInt(startTime[2]);
+            startTime = startTime[1].split("-");
+            var startSecond = parseInt(startTime[0]);
+            var finishMinute = parseInt(startTime[1]);
+            var totStartTime = startMinute*60 + startSecond;
+            var totFinishTime = finishMinute*60 + finishSecond;
 
-        var timeRight = $(this).find('.timeRight');
-        var audio = $(this).find('.audio')[0];
-        if (audio.readyState >= 2) {
-            var minutes = Math.floor(audio.duration/60 % 60);
-            var seconds = Math.floor(audio.duration % 60);
-            if (seconds < 10) {
-                $(timeRight).text(minutes + ":0" + seconds);
-            } else {
-                $(timeRight).text(minutes + ":" + seconds);
+            if (audio.readyState >= 2) {
+                audio.volume = 0;
+                $(timeline_highlight).css('width', (totStartTime / audio.duration)*100 + "%");
+                $(timeline_feature).css({'margin-left': (totStartTime / audio.duration)*100 + "%", 'width': ((totFinishTime-totStartTime) / audio.duration)*100 + '%'});
+                $(circle).css('margin-left', (totStartTime / audio.duration)*100 + "%");
+                $(timeCounter).css('margin-left', totStartTime);
+                audio.currentTime = totStartTime;
+                var minutes = Math.floor(audio.duration/60 % 60);
+                var seconds = Math.floor(audio.duration % 60);
+                if (seconds < 10) {
+                    $(timeRight).text(minutes + ":0" + seconds);
+                } else {
+                    $(timeRight).text(minutes + ":" + seconds);
+                }
+                minutes = Math.floor(audio.currentTime/60 % 60);
+                seconds = Math.floor(audio.currentTime % 60);
+                if (seconds < 10) {
+                    $(timeLeft).text(minutes + ":0" + seconds);
+                } else {
+                    $(timeLeft).text(minutes + ":" + seconds);
+                }
             }
         }
     });
 })
 
 $(window).on("load",function() {
+    $('#Contact').css('height', (parseInt($('#Contact').css('height')) - parseInt($('.menu_3').css('height'))) + 'px');
 
+    function fade(pageLoad) {
+        var windowTop=$(window).scrollTop(), windowBottom=windowTop+$(window).innerHeight();
+        var min=0, max=1.8, threshold=0.01;
 
-  function fade(pageLoad) {
-    var windowTop=$(window).scrollTop(), windowBottom=windowTop+$(window).innerHeight();
-    var min=0, max=1.8, threshold=0.01;
+        $(".part, .part_first").each(function() {
+            /* Check the location of each desired element */
+            var objectHeight=$(this).outerHeight(), objectTop=$(this).offset().top, objectBottom=$(this).offset().top+objectHeight;
 
-    $(".part, .part_first").each(function() {
-      /* Check the location of each desired element */
-      var objectHeight=$(this).outerHeight(), objectTop=$(this).offset().top, objectBottom=$(this).offset().top+objectHeight;
-
-      /* Fade element in/out based on its visible percentage */
-      if (objectTop < windowTop) {
-        if (objectBottom > windowTop) {$(this).fadeTo(0,min+((max-min)*((objectBottom-windowTop)/objectHeight)));}
-        else if ($(this).css("opacity")>=min+threshold || pageLoad) {$(this).fadeTo(0,min);}
-      } else if (objectBottom > windowBottom) {
-        if (objectTop < windowBottom) {$(this).fadeTo(0,min+((max-min)*((windowBottom-objectTop)/objectHeight)));}
-        else if ($(this).css("opacity")>=min+threshold || pageLoad) {$(this).fadeTo(0,min);}
-      } else if ($(this).css("opacity")<=max-threshold || pageLoad) {$(this).fadeTo(0,max);}
-    });
-  } fade(true); //fade elements on page-load
-  $(window).scroll(function(){fade(false);}); //fade elements on scroll
+            /* Fade element in/out based on its visible percentage */
+            if (objectTop < windowTop) {
+                if (objectBottom > windowTop) {$(this).fadeTo(0,min+((max-min)*((objectBottom-windowTop)/objectHeight)));}
+                else if ($(this).css("opacity")>=min+threshold || pageLoad) {$(this).fadeTo(0,min);}
+            } else if (objectBottom > windowBottom) {
+                if (objectTop < windowBottom) {$(this).fadeTo(0,min+((max-min)*((windowBottom-objectTop)/objectHeight)));}
+                else if ($(this).css("opacity")>=min+threshold || pageLoad) {$(this).fadeTo(0,min);}
+            } else if ($(this).css("opacity")<=max-threshold || pageLoad) {$(this).fadeTo(0,max);}
+        });
+    } fade(true); //fade elements on page-load
+    $(window).scroll(function(){fade(false);}); //fade elements on scroll
 });
